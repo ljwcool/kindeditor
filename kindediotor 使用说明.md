@@ -17,7 +17,7 @@ https://blog.csdn.net/qq_39953537/article/details/100043354?depth_1-  vue后台�
 
 
 
-https://blog.csdn.net/qq_39953537/article/details/100516072?depth_1-    vue后台管理系统富文本组件（二）qull  需要时间看
+https://blog.csdn.net/qq_39953537/article/details/100516072?depth_1-    vue后台管理系统富文本组件（三）qull  需要时间看
 
 https://blog.csdn.net/qq_39953537/article/details/100041453   vue后台管理系统富文本组件（一）tinymce 需要时间看
 
@@ -71,13 +71,13 @@ https://blog.csdn.net/qq_39953537/article/details/100041453   vue后台管理系
 
   * 2、在组件的index.vue里面引用==>如果出现报错
 
-    Refused to apply style from 'http://localhost:8001/themes/default/default.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+    <font color='red'>Refused to apply style from 'http://localhost:8001/themes/default/default.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.</font>
 
     ![image-20201104102800698](.\kindediotor 使用说明\image-20201104102800698.png)
 
     出现问题原因：路径问题（新建新的项目不报错，引用到旧项目就报错，能力有限没时间找，以下介绍目前粗暴的解决方法）
 
-    方案一：看下面的引用代码=>明显是在安装依赖node_modules里，那么路径出错那就去改路径（因为不熟找的过程一言难尽：使用<font color='red'>default.cs</font>s关键字搜索看它引用的地方，然后再<font color='red'>kindeditor-all-min.js</font>里找到一个关键字<font color='red'>themesPath</font>，然后找到配置文件<font color='red'>otherConfig.js</font>有这个，所以在那边改路径，2个方案，<font color='red'>一种用依赖</font>    <font color='red'> 另一种</font>把依赖里的重新复制一份到static里面，<font color='red'>推荐第二种</font>，后面自己想怎么玩就怎么玩），
+    看下面的引用代码=>明显是在安装依赖node_modules里，那么路径出错那就去改路径（因为不熟找的过程一言难尽：使用<font color='red'>default.cs</font>s关键字搜索看它引用的地方，然后再<font color='red'>kindeditor-all-min.js</font>里找到一个关键字<font color='red'>themesPath</font>，然后找到配置文件<font color='red'>otherConfig.js</font>有这个，所以在那边改路径，2个方案，<font color='red'>一种用依赖</font>    <font color='red'> 另一种</font>把依赖里的重新复制一份到static里面，<font color='red'>推荐第二种</font>，后面自己想怎么玩就怎么玩），
 
   ```js
   //引用文件的
@@ -114,4 +114,4 @@ https://blog.csdn.net/qq_39953537/article/details/100041453   vue后台管理系
 
   * 4、里面的显示字数等等，自己去看api有很多，可以用监听的父子传参也可以调用子组件方法，看你自己，大佬已经做好很多方法，可以根据自己去改造
 
-*  如果是切入旧项目推进看文档旧项目，新的项目看新的，这边都是vue-cli2,, 3以上的区别就是public和static的区别，反正不需要你改webpack配置，
+*  如果是旧项目推荐旧项目，新的项目看新的，这边都是vue-cli2创建的项目,, 3以上的区别就是public和static的区别，反正不需要你改webpack配置，
